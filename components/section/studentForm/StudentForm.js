@@ -2,7 +2,7 @@ import { PostApi } from "../../../lib/Apis";
 import React, { useState } from "react";
 import { FormContainer } from "./style";
 
-const StudentForm = ({ data, URL, API }, props) => {
+const StudentForm = ({ data, URL, API }) => {
   //USE STATE TO SAVE DATA
   const [formData, setFormData] = useState({
     Name: data?.Name || "",
