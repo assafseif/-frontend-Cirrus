@@ -3,6 +3,7 @@ import { FormContainer } from "./style";
 import { useState } from "react";
 import Router from "next/router";
 import React from "react";
+
 const Register = () => {
   //SETTING  STATE FOR ERROR IF EXIST
   const [error, setMessage] = useState();

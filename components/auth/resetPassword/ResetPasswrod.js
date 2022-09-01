@@ -3,6 +3,7 @@ import { useState } from "react";
 import Router from "next/router";
 import { PatchApi } from "../../../lib/Apis";
 import { FormContainer } from "./style";
+
 const ResetPassword = ({ token }) => {
   //NEW STATE FOR ERROR IF EXIST
   const [error, setError] = useState();
