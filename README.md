@@ -7,13 +7,14 @@ The tools and libraries used to complete the project are the following:
 
 2-**Prettier**: Code formatting
 
-3-**React Hook Form**
+3-**React Hooks**
 
 ## Prerequisites
 
 1-**Node** (version 10.13 or later)
 2-**Git**
 3-**yarn**
+3-**VS**
 
 ## Installation
 
