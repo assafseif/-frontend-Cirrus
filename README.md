@@ -1,6 +1,6 @@
 # CIRRUS frontend Code Challenge
 
-The main goal for this project that any user should be able to view and interact seamlessly with the GUI as well as using all THE CRUD operations on the STUDENTS, and TEACHERS.
+The main goal of this project that any user should be able to view and interact seamlessly with the GUI as well as using all THE CRUD operations on the STUDENTS, and TEACHERS.
 The tools and libraries used to complete the project are the following:
 
 1-**Next Js**: React framework
