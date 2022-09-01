@@ -45,10 +45,10 @@ export const TeacherForm = ({ data, API, URL }) => {
 
     try {
       //SENDING FORMDATA TO SERVER SIDE DEPENDING ON API
-      const data = await API(formData, URL);
+      const ServerData = await API(formData, URL);
 
-      //IF DATA SUCCESS THEN RE EMPTY STATE
-      if (data.success) {
+      //IF DATA SUCCESS AND WE ARE ADDING NOT EDITING THEN RE EMPTY STATE
+      if (!data?.Teacher && ServerData.success) {
         setFormData((prevFormData) => {
           return {
             Name: "",
@@ -63,7 +63,7 @@ export const TeacherForm = ({ data, API, URL }) => {
       }
 
       //ELSE SETTING ERROR
-      setError(data?.error?.message || data?.message);
+      setError(ServerData?.error?.message || ServerData?.message);
     } catch (error) {
       console.log(error);
     }

@@ -2,7 +2,7 @@ import { PostApi } from "../../../lib/Apis";
 import React, { useState } from "react";
 import { FormContainer } from "./style";
 
-const StudentForm = ({ data, URL, API }) => {
+const StudentForm = ({ data, URL, API }, props) => {
   //USE STATE TO SAVE DATA
   const [formData, setFormData] = useState({
     Name: data?.Name || "",
@@ -36,10 +36,11 @@ const StudentForm = ({ data, URL, API }) => {
 
     try {
       //SENDING DATA DEPENDING ON API
-      const data = await API(formData, URL);
+      const serverData = await API(formData, URL);
 
-      //IF EXISIT THEN PUT ALL DATA EMPTY MIGHT THE USER WHANT TO ADD ANOTHER STUDENT
-      if (data.success) {
+      //IF DATA SUCCESS AND WE ARE ADDING NOT EDITING THEN PUT ALL DATA EMPTY MIGHT THE USER WHANT TO ADD ANOTHER STUDENT
+      if (!data?.Name && serverData.success) {
+        console.log(data);
         setFormData((prevFormData) => {
           return {
             Name: "",
@@ -50,7 +51,7 @@ const StudentForm = ({ data, URL, API }) => {
         });
       }
       //ELSE SETTING THE ERRORS
-      setError(data?.error?.message || data?.message);
+      setError(serverData?.error?.message || serverData?.message);
     } catch (error) {
       console.log(error);
     }
