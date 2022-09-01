@@ -39,7 +39,7 @@ const Register = () => {
       );
 
       //ELSE IF THERE IS SOME ERROR OR MESSAGES PUT THEM IN STATE
-      setMessage(data?.message);
+      setMessage(data?.error?.message || data?.message);
 
       // IF SUCCESS THEN WE PUSH TO LOGIN PAGE
       if (data.success) {
