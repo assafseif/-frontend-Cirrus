@@ -28,6 +28,10 @@ yarn or yarn install
 4-**run the development server:**
 
 ```bash
+yarn install
+```
+
+```bash
 yarn run dev
 ```
 
